@@ -1,62 +1,33 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Table
+import javax.persistence.*;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "users")
 public class User {
-    @Id
-    private Long id;
-
-    @Column
-    private String name;
-
-    @Column
-    private String lastName;
-
-    @Column
-    private Byte age;
-
-    public User() {
-
-    }
-
     public User(String name, String lastName, Byte age) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
     }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(name = "name")
+    private String name;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "lastName")
+    private String lastName;
 
-    public String getName() {
-        return name;
-    }
+    @Column(name = "age")
+    private Byte age;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Byte getAge() {
-        return age;
-    }
-
-    public void setAge(Byte age) {
-        this.age = age;
-    }
 }
