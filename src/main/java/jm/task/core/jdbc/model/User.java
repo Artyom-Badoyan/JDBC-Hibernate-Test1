@@ -1,6 +1,7 @@
 package jm.task.core.jdbc.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name = "users")
 public class User {
     public User(String name, String lastName, Byte age) {
@@ -17,6 +19,7 @@ public class User {
         this.lastName = lastName;
         this.age = age;
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

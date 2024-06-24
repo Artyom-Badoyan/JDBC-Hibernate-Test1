@@ -49,7 +49,7 @@ public class Util {
             try {
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER, "org.postgresql.Driver");
-                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/task1");
+                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/postgres");
                 settings.put(Environment.USER, "postgres");
                 settings.put(Environment.PASS, "rootroot");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
